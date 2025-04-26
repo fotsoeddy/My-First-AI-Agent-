@@ -90,7 +90,7 @@ Pull requests are welcome! Feel free to open issues to propose improvements or a
 
 
 ## License
-This project is open-source and free to use. (You can add a LICENSE file if needed.)
+This project is open-source and free to use.
 
 ---
 
