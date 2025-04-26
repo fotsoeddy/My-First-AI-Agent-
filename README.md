@@ -1,98 +1,98 @@
 # My First AI Agent
 
-This project is called **my_agent_adk**, and it contains a simple AI agent built using [Google's AI Development Kit (ADK)](https://cloud.google.com/vertex-ai/docs/agents/overview). It is designed to answer user questions about **the weather** and **the current time** in a specific city.
+This is a simple AI agent using Google ADK (Agent Development Kit) to answer questions about weather and time in a specific city.
+
+Repository: [https://github.com/fotsoeddy/My-First-AI-Agent-.git](https://github.com/fotsoeddy/My-First-AI-Agent-.git)
 
 ---
 
-## 📅 Project Structure
+## Project Structure
 
-```bash
+```
 my_agent_adk/
-├── agent.py           # Main agent definition and logic
-├── __init__.py        # Makes this folder a Python package
-├── __pycache__/       # Compiled Python cache files (auto-generated)
-├── requirements.txt   # List of all dependencies
-├── venv/              # Python virtual environment (recommended to use)
+├── agent.py          # Main agent code
+├── __init__.py
+├── __pycache__/
+├── requirements.txt  # Python dependencies
+├── venv/             # Virtual environment (not included in repo)
 ```
 
----
+## How to Setup and Run
 
-## 📦 Installation and Setup
-
-First, clone the repository:
+1. **Clone the repository**
 
 ```bash
 git clone https://github.com/fotsoeddy/My-First-AI-Agent-.git
-cd My-First-AI-Agent-/my_agent_adk
+cd My-First-AI-Agent-
 ```
 
-Create and activate a virtual environment (optional but recommended):
+2. **Create and activate a virtual environment**
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-Install the dependencies:
+3. **Install the dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Make sure you have a `.env` file (you might need one depending on your ADK setup).
+4. **Set up your environment variables**
 
----
+Create a `.env` file in the root directory. Example:
 
-## 🧑‍💻 Running the Agent
-
-To run the agent locally inside the ADK UI:
-
-```bash
-adk web ui --path=my_agent_adk/agent.py
+```env
+# .env file
+GOOGLE_GENAI_USE_VERTEXAI=FALSE
+GOOGLE_API_KEY=your-api-key-here
 ```
 
-Then open your browser at:
+You can copy it from `.env.example`.
 
-```bash
-http://localhost:8080
+**If you are using Google AI Studio**, set `GOOGLE_GENAI_USE_VERTEXAI=FALSE` and add your API key from AI Studio.
+
+**If you are using Vertex AI**, set:
+
+```env
+GOOGLE_GENAI_USE_VERTEXAI=TRUE
+GOOGLE_PROJECT_ID=your-gcp-project-id
+GOOGLE_LOCATION=your-vertexai-region
 ```
 
-You can interact with the agent using natural language. Example questions:
-- "What's the weather like in New York?"
-- "What time is it in New York?"
+And ensure your environment has credentials:
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/service-account-key.json
+```
+
+5. **Run the agent locally**
+
+```bash
+adk web
+```
+
+This will start a FastAPI web server where you can interact with your agent!
 
 ---
 
-## 📈 Project Description
+## What This Agent Can Do
 
-**My First AI Agent** is a simple but functional demonstration of how to build an AI agent using Google's ADK (AI Development Kit). It features two main tools:
-- **get_weather**: Fetches static weather information for New York.
-- **get_current_time**: Fetches the current time in New York based on timezone data.
+- **Get Weather**: For example, "What is the weather like in New York?"
+- **Get Time**: For example, "What time is it in New York?"
 
-It can be easily extended to add more cities, more services, or more tools for your custom needs.
-
----
-
-## 📊 Tech Stack
-- Python 3.12+
-- [Google ADK](https://pypi.org/project/google-adk/)
-- FastAPI
-- Websockets
+The agent uses simple hardcoded responses but is set up to extend easily.
 
 ---
 
-## 🛍️ License
+## Contribution
+Pull requests are welcome! Feel free to open issues to propose improvements or ask questions.
 
-This project is under the [MIT License](LICENSE) (you can add a LICENSE file if you wish).
 
----
-
-## 🚀 Future Improvements
-- Support weather and time for more cities
-- Add real API integrations (like OpenWeatherMap)
-- Enhance error handling and user prompts
+## License
+This project is open-source and free to use. (You can add a LICENSE file if needed.)
 
 ---
 
-> Made with ❤️ by [Eddy](https://github.com/fotsoeddy)
+**Made with ❤️ using Google ADK**
 
